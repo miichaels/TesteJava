@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @RestController
 @RequestMapping("/hotel")
@@ -21,9 +22,13 @@ public class HotelController {
         return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(hotelModel));
     }
 
+    @GetMapping
+    public ResponseEntity<List<HotelModel>> GetAll(){
+        return ResponseEntity.ok(repository.findAll());
+    }
 
 
-   /* @GetMapping(value = "/cliente")
+    /* @GetMapping(value = "/cliente")
     private  String getClient(){
         String uri = "https://restcountries.eu/rest/v2/all";
         //String uri = "http://api.infotravel.com.br/api/v1";
