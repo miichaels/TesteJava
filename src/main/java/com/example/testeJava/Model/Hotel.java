@@ -2,7 +2,7 @@ package com.example.testeJava.Model;
 
 import java.util.ArrayList;
 
-public class Hotel<H> {
+public class Hotel{
 
     private int id;
     private String name;

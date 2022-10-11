@@ -14,10 +14,25 @@ public class HotelModel {
 
     private int idade;
 
-    //private Long checkIn;
+    private Long checkIn;
 
-    //private Long checkOut;
+    private Long checkOut;
 
+    public Long getCheckIn() {
+        return checkIn;
+    }
+
+    public void setCheckIn(Long checkIn) {
+        this.checkIn = checkIn;
+    }
+
+    public Long getCheckOut() {
+        return checkOut;
+    }
+
+    public void setCheckOut(Long checkOut) {
+        this.checkOut = checkOut;
+    }
 
     public Long getId() {
         return id;

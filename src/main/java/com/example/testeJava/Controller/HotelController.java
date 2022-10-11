@@ -17,10 +17,7 @@ public class HotelController {
     @Autowired
     public HotelRepository repository;
 
-    @PostMapping
-    public ResponseEntity<HotelModel> postHotel (@RequestBody @Valid HotelModel hotelModel){
-        return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(hotelModel));
-    }
+
 
     @GetMapping
     public ResponseEntity<List<HotelModel>> GetAll(){
@@ -28,13 +25,18 @@ public class HotelController {
     }
 
 
-    /* @GetMapping(value = "/cliente")
+   /*@GetMapping
     private  String getClient(){
-        String uri = "https://restcountries.eu/rest/v2/all";
-        //String uri = "http://api.infotravel.com.br/api/v1";
+        String uri = "http://api.infotravel.com.br/api/v1";
         RestTemplate restTemplate = new RestTemplate();
         String result = restTemplate.getForObject(uri, String.class);
         return result;
     }*/
+
+    @PostMapping
+    public ResponseEntity<HotelModel> post (@RequestBody @Valid HotelModel hotelModel){
+        return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(hotelModel));
+    }
+
 
 }
